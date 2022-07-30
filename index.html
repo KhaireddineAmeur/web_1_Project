@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <!-- bootstrap -->
+        <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">-->
+        <!-- bootstrap -->
+        <title>Annonces_Gratuites</title>
+    </head>
+    <body onresize="screen_resized()" onload="screen_resized()">
+        <div id="_content">
+            <div id="_div_size"></div>
+            <div class="_headers_bars">
+                <div class="_logo_bar">
+                    <img id="_logo" src="Logo.png">
+                    <img id="_logo_small_screen" src="./assets/Projet Logo.png">
+                </div>
+                <div class="_search_bar">
+                    <a href=""><img id="_connect_icon" src="./assets/se_conneceter_icon.png">Se connecter</a>
+                    <form class="_search_form">
+                        <input class="_search_box" type="search" placeholder="Search" aria-label="Recherche sur Forsanet">
+                        <button class="_button_search_from" type="submit">Chercher..</button>
+                    </form>
+                </div>
+                <button id="_ajout_annonce" onclick="_display_ajouter_annonce()">Ajouter une annonce</button>
+            </div>
+            <div><!--ajouter annonce-->
+                <form class="_ajouter_annonce" name="_new_post_form" onsubmit="return _validate_form('_new_post_form','_mail','_tel')">
+                    <p>Nom, prénom</p><input id="_nouvelle_annonce_nom" type="text" placeholder="Nom, prénom" aria-label="Titre de l'annonce" required>
+                    <p>Tel</p><input id="_nouvelle_annonce_Tel" name="_tel" type="number" placeholder="(+**) **-***-***" aria-label="Titre de l'annonce" >
+                    <p>Région</p><input id="_nouvelle_annonce_region" type="" placeholder="Région" aria-label="Titre de l'annonce" >
+                    <p>Mail</p><input id="_nouvelle_annonce_Mail" name="_mail"  placeholder="******@*****.**" aria-label="Titre de l'annonce" ><br>
+                    <p>Catégorie</p>
+                        <select name="cars" id="_select_categories">
+                            <option value="Immobilier">selectionnez une catégorie...</option>
+                            <option value="Immobilier">Immobilier</option>
+                            <option value="Véhicule">Véhicule</option>
+                            <option value="Habillement">Habillement</option>
+                            <option value="Multimedias">Multimedias</option>
+                        </select>
+                    <p>Titre</p><input id="_nouvelle_annonce_titre" type="text" placeholder="" aria-label="Titre de l'annonce" required>
+                    <p>Description</p><input id="_nouvelle_annonce_description" type="text" placeholder="" aria-label="Titre de l'annonce" >
+                    <p>Ajouter des photos</p><input id="_nouvelle_annonce_photo" type="file" accept="image/*" >
+                    <p>Prix</p><input id="_nouvelle_annonce_prix" type="" placeholder="number" aria-label="Titre de l'annonce" required>
+
+                    <div id="_ajout_annonce_buttons">
+                        <button class="_vider_champ" type="reset">Vider les champs</button>
+                        <button class="_annuler" type="reset" onclick="_display_ajouter_annonce()">Annuler</button>
+                        <button id="_publier_annonce" type="submit">Publier</button>
+                    </div>
+                </form>
+            </div>
+            <div> <!-- liste carrousselle start-->
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="./assets/slide_1_best-time-to-visit-tunisia.jpg" style="width:100%">
+                        <div class="text">Caption Text</div>
+                    </div>
+                
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="./assets/slide_2_GMC.png" style="width:100%">
+                        <div class="text">Caption Two</div>
+                    </div>
+                
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="./assets/Arnaque.png" style="width:100%">
+                        <div class="text">Caption Three</div>
+                    </div>
+                
+                    <!-- Next and previous buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+                
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+
+                <!-- liste carrousselle end-->
+            </div>
+            
+            <div id="_main_content">
+                <div id="_side_bar">
+                    <nav id="_ctegorie_menu_level_1">
+                        <button id="_category_button" onclick="_afficher_categories()">|||</button>
+                        <ul class="_categories">
+                            <li onmouseover="_display_sous_categories(this.parentNode.className,0)" onmouseout="_hide_sous_categories(this.parentNode.className,0)"><img class="_cat_icon" src="./assets/immo_icon.png">
+                                <h3>Immobiliers</h3>
+                                <ul class="_sous_catégories"><li>Vente</li><li>Location</li><li>Location vacance</li></ul>
+                            </li>
+                            <li onmouseover="_display_sous_categories(this.parentNode.className,1)" onmouseout="_hide_sous_categories(this.parentNode.className,1)"><img class="_cat_icon" src="./assets/car_icon.png">
+                                <h3>Véhicules</h3>
+                                <ul class="_sous_catégories"><li>Voitures</li><li>Camions</li><li>Motos</li></ul>
+                            </li>
+                            <li onmouseover="_display_sous_categories(this.parentNode.className,2)" onmouseout="_hide_sous_categories(this.parentNode.className,2)"><img class="_cat_icon" src="./assets/Clothes_icon.png">
+                                <h3>Habillement</h3>
+                                <ul class="_sous_catégories"><li>Homme</li><li>Femmes</li><li>Enfants</li></ul>
+                            </li>
+                            <li onmouseover="_display_sous_categories(this.parentNode.className,3)" onmouseout="_hide_sous_categories(this.parentNode.className,3)"><img class="_cat_icon" src="./assets/Multimedia_icon.png">
+                                <h3>Multimedias</h3>
+                                <ul class="_sous_catégories"><li>PC</li><li>Smartphones</li><li>Montres connectées</li></ul>
+
+                            </li>
+                            <li onmouseover="_display_sous_categories(this.parentNode.className,4)" onmouseout="_hide_sous_categories(this.parentNode.className,4)"><img class="_cat_icon" src="./assets/maison_icon.png"><h3>Maison</h3></li>
+                            <li onmouseover="_display_sous_categories(this.parentNode.className,5)" onmouseout="_hide_sous_categories(this.parentNode.className,5)"><img class="_cat_icon" src="./assets/service_icon.png"><h3>Services</h3></li>
+                        </ul>
+                    </nav>
+                    <nav id="nav_small_screens">
+                        <div><img class="_cat_icon" src="./assets/immo_icon.png"><h3>Immobiliers</h3></div>
+                        <div><img class="_cat_icon" src="./assets/car_icon.png"><h3>Véhicules</h3></div>
+                        <div><img class="_cat_icon" src="./assets/Clothes_icon.png"><h3>Habillement</h3></div>
+                        <div><img class="_cat_icon" src="./assets/Multimedia_icon.png"><h3>Multimedias</h3></div>
+                    </nav>
+                </div>
+                <!-- <details open  class="_categories">
+                    <summary>Immobiliers</summary>
+                    <p>HHH</p>
+                </details>
+                <details open>
+                    <summary>Immobiliers</summary>
+                    <ul class=""><li>Vente</li><li>Location</li><li>Location vacance</li></ul>
+                </details>
+                <details open>
+                    <summary>Immobiliers</summary>
+                    <p>HHH</p>
+                </details> -->
+                
+                <main id="_main">
+                    Les plus récentes..
+                    <div class="_annonce">
+                        <img src="./assets/no_image_icon.png" alt="">
+                        <div>
+                            <h5>catégorie</h5>
+                            <h4>jj/mm/aa - hh:mn</h4>
+                            <h2>Titre de l'annonce</h2>
+                            <p>Texte de l'annonce</p>
+                        </div>
+                    </div>
+                    <div class="_annonce">
+                        <img src="./assets/no_image_icon.png">
+                        <div>
+                            <h5>catégorie</h5>
+                            <h4>jj/mm/aa - hh:mn</h4>
+                            <h2>Titre de l'annonce</h2>
+                            <p>Texte de l'annonce</p>
+                        </div>
+                    </div>
+                </main>
+                
+            </div>
+            
+            <footer>
+                <div id="all_ads">
+                    <div class="_cat">
+                        <h4>Immobilier </h4>
+                        <div class="ss_cat">
+                            <h5>Vente</h5>
+                            <h5>Location</h5>
+                            <h5>Location vacances</h5>
+                        </div>
+                    </div>
+                    <div class="_cat">
+                        <h4>Véhicules </h4>
+                        <div class="ss_cat">
+                            <h5>Voitures</h5>
+                            <h5>Camions</h5>
+                            <h5>Moto</h5>
+                        </div>
+                    </div>
+                    <div class="_cat">
+                        <h4>Habillement </h4>
+                        <div class="ss_cat">
+                            <h5>Hommes</h5>
+                            <h5>Fammes</h5>
+                            <h5>enfants</h5>
+                        </div>
+                    </div>
+                    <div class="_cat">
+                        <h4>Multimedias </h4>
+                        <div class="ss_cat">
+                            <h5>PCs</h5>
+                            <h5>Smart phones</h5>
+                            <h5>Montres connectées</h5>
+                        </div>
+                    </div>
+                    <div class="_cat">
+                        <h4>Maison </h4>
+                        <div class="ss_cat">
+                            <h5></h5>
+                            <h5></h5>
+                        </div>
+                    </div>
+                    <div class="_cat">
+                        <h4>Services </h4>
+                        <div class="ss_cat">
+                            <h5></h5>
+                            <h5></h5>
+                        </div>
+                    </div>
+                </div>
+                <div>copyrights</div>
+                    
+                
+            </footer>
+            
+        
+        </div>
+
+
+
+            
+        <script src="Script.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>-->
+        
+    </body>
+</html>

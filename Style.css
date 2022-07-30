@@ -1,0 +1,580 @@
+*{
+   margin:0px;
+   padding:0px;
+   border:0px;
+}
+/* large screens*/
+#_content {
+width: 1200px;
+margin: auto;
+
+}
+._headers_bars{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+
+}
+#_logo{
+   width: 160px;
+   height: 100px;
+   
+}
+#_logo_small_screen{
+      display:none;
+}
+#_connect_icon{
+      width: 30px;
+      height: 30px;
+}
+._search_bar{
+   display: flex;
+   flex-direction: column;
+   align-items: end;
+}
+._search_bar a{
+   margin-right: 200px;
+   text-decoration: none;
+   color: #EB4747;
+}
+
+._search_form{
+   width: 900px;
+   margin: auto;
+   padding: 3px;
+}
+._search_box{
+   width: 750px;
+   border-radius: 15px;
+   border: 50px;
+   border : #EB4747 solid;
+   margin-left: 30px;
+   margin-right: 20px;
+}
+._button_search_from{
+   background-color: #EB4747;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+
+}
+#_ajout_annonce{
+   background-color: #ABC9FF  ;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  margin-top: 45px;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+._ajouter_annonce{
+   display: none;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+._ajouter_annonce p{
+   width: 25%;
+   height: 40px;
+   margin: 5px;
+   text-align:right;
+   vertical-align: middle;
+   padding-right: 7px;
+}
+._ajouter_annonce input{
+   border: 1px solid #FFDEDE;
+   width: 70%;
+   height: 40px;
+   margin: 5px;
+}
+._ajouter_annonce select{
+   width: 65%;
+}
+#_ajout_annonce_buttons{
+   width: 300px;
+   margin-left: 800px;
+   margin-bottom: 20px;
+}
+#_ajout_annonce_buttons button{
+   background-color: red;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+
+}
+#_ajout_annonce_buttons #_publier_annonce{
+   background-color: #ABC9FF;
+   margin-left: 20px;
+}
+/* Liste carrousselle*/
+      * {box-sizing:border-box}
+      /* Slideshow container */
+      .slideshow-container {
+         max-width: 700px;
+         position: relative;
+         margin: auto;
+      }
+      
+      /* Hide the images by default */
+      .mySlides {
+         display: none;
+      }
+      
+      /* Next & previous buttons */
+      .prev, .next {
+         cursor: pointer;
+         position: absolute;
+         top: 50%;
+         width: auto;
+         margin-top: -22px;
+         padding: 16px;
+         color: white;
+         font-weight: bold;
+         font-size: 18px;
+         transition: 0.6s ease;
+         border-radius: 0 3px 3px 0;
+         user-select: none;
+      }
+      
+      /* Position the "next button" to the right */
+      .next {
+         right: 0;
+         border-radius: 3px 0 0 3px;
+      }
+      
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover, .next:hover {
+         background-color: rgba(0,0,0,0.8);
+      }
+      
+      /* Caption text */
+      .text {
+         color: #f2f2f2;
+         font-size: 15px;
+         padding: 8px 12px;
+         position: absolute;
+         bottom: 8px;
+         width: 100%;
+         text-align: center;
+      }
+      
+      /* Number text (1/3 etc) */
+      .numbertext {
+         color: #f2f2f2;
+         font-size: 12px;
+         padding: 8px 12px;
+         position: absolute;
+         top: 0;
+      }
+      
+      /* The dots/bullets/indicators */
+      .dot {
+         cursor: pointer;
+         height: 15px;
+         width: 15px;
+         margin: 0 2px;
+         background-color: #bbb;
+         border-radius: 50%;
+         display: inline-block;
+         transition: background-color 0.6s ease;
+      }
+      
+      .active, .dot:hover {
+         background-color: #717171;
+      }
+      
+      /* Fading animation */
+      .fade {
+         animation-name: fade;
+         animation-duration: 1.5s;
+      }
+      
+      @keyframes fade {
+         from {opacity: .4}
+         to {opacity: 1}
+ }
+/* Liste carrousselle*/
+#_main_content{
+   display:flex;
+   flex-direction: row;
+}
+#_side_bar{
+   width: 28%;
+}
+#_category_button{
+   display: none;
+}
+._categories li{
+height: 38px;
+width: 80%;
+background-color: #ABC9FF;
+border: 2px solid white;
+}
+._categories li:hover{
+   background-color: #FF8B8B;
+}
+._sous_catégories{
+   height: 33px;
+   font: 20px;
+   visibility: hidden;
+}
+._sous_catégories li{
+   height: 33px;
+   width: 150px;
+   font: 20px;
+   padding: 2px;
+}
+
+#nav_small_screens{
+   display:none;
+}
+
+
+
+#_main{
+   width: 72%;
+   display: flex;
+   flex-direction: column-reverse;
+
+}
+._annonce{
+   display: flex;
+   flex-direction: row;
+   margin: 7px;
+   border-bottom: 1.5px solid #FF8B8B;
+}
+img{
+   width: 160px;
+   height: 160px;
+   margin: 6px;
+}
+li{
+   display: flex;
+   flex-direction: row;
+}
+li img{
+   width:15px;
+   height: 15px;
+}
+
+._annonce img{
+   width: 120px;
+   height: 120px;
+   margin: 7px;
+}
+
+#all_ads{
+   display:flex;
+   flex-direction: row;
+   align-items:flex-start;
+   justify-content: space-around;
+   background-color: #FFDEDE;
+   
+}
+._cat h4{
+   size: 20px;
+   color: #EB4747;
+   margin-top: 5px;
+}
+._cat h5{
+   size: 13px;
+}
+._cat{
+   display: flex;
+   flex-direction: column;
+   width: 320px;
+   margin: 5px;
+} 
+
+
+@media only screen and (max-width: 600px) {
+   #_content{
+      width: 412px;
+      margin: auto;
+
+   }
+   ._headers_bars{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+   }
+
+   #_logo{
+      display: none;
+      width: 160px;
+      height: 100px;
+      
+   }
+
+   #_logo_small_screen{
+      width: 220px;
+      height: 50px;
+      display: block;
+      margin-right: 100px;
+   }
+   #_connect_icon{
+      width: 30px;
+      height: 30px;
+   }
+  
+   /* */
+   ._search_bar{
+      display: flex;
+      flex-direction: row-reverse;
+      align-items:flex-start;
+      
+   }
+   ._search_bar a{
+      text-decoration: none;
+      color: #EB4747;
+      width: 100px;
+      margin: 0px;
+      margin-right: 30px;
+      margin-left: 20px;
+      
+   }
+   
+   ._search_form{
+      width: 250px;
+      margin: 0px;
+      padding: 3px;
+   }
+   ._search_box{
+      width: 200px;
+      border-radius: 15px;
+      border: 50px;
+      border : #EB4747 solid;
+      margin: 0px;
+   }
+   
+   #_ajout_annonce{
+      background-color: #ABC9FF  ;
+     border: 1px solid transparent;
+     border-radius: 3px;
+     box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+     box-sizing: border-box;
+     color: #fff;
+     cursor: pointer;
+     display: inline-block;
+     font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+     font-size: 13px;
+     font-weight: 400;
+     line-height: 1.15385;
+     margin: 0;
+     margin-top: 25px;
+     margin-right: 20px;
+     outline: none;
+     padding: 8px .8em;
+     position: relative;
+     text-align: center;
+     text-decoration: none;
+     user-select: none;
+     -webkit-user-select: none;
+     touch-action: manipulation;
+     vertical-align: baseline;
+     white-space: nowrap;
+   }
+   #_ajouter_annonce{
+      width: 412px;
+   }
+   /* */
+   #_ajout_annonce_buttons{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 400px;
+      margin-left: 0px;
+      margin-bottom: 20px;
+   }
+   ._ajouter_annonce p{
+      width: 25%;
+      height: 40px;
+      margin: 5px;
+      text-align:right;
+      vertical-align: middle;
+      padding-right: 7px;
+   }
+   ._ajouter_annonce input{
+      border: 1px solid #FFDEDE;
+      width: 60%;
+      height: 40px;
+      margin: 5px;
+   }
+   ._ajouter_annonce select{
+      width: 65%;
+   }
+   #_ajout_annonce_buttons button{
+      background-color: red;
+     border: 1px solid transparent;
+     border-radius: 3px;
+     box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+     box-sizing: border-box;
+     color: #fff;
+     cursor: pointer;
+     display: inline-block;
+     font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+     font-size: 13px;
+     font-weight: 400;
+     line-height: 1.15385;
+     margin: 0;
+     outline: none;
+     padding: 8px .8em;
+     position: relative;
+     text-align: center;
+     text-decoration: none;
+     user-select: none;
+     -webkit-user-select: none;
+     touch-action: manipulation;
+     vertical-align: baseline;
+     white-space: nowrap;
+   
+   }
+   
+   #_side_bar{
+      width: 412px;
+   }
+
+   #_category_button{ /* pour ouvrir les catégories en version small screen*/
+      background-color: #FFDEDE;
+     border: 1px solid transparent;
+     border-radius: 3px;
+     box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+     box-sizing: border-box;
+     color: #ABC9FF;
+     cursor: pointer;
+     display: inline-block;
+     font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+     font-size: 13px;
+     font-weight: 400;
+     line-height: 1.15385;
+     margin: 0;
+     margin-left: 30px;
+     outline: none;
+     padding: 8px .8em;
+     position: relative;
+     text-align: center;
+     text-decoration: none;
+     user-select: none;
+     -webkit-user-select: none;
+     touch-action: manipulation;
+     vertical-align: baseline;
+     white-space: nowrap;
+   }
+   ._categories{ /* --- */
+      display: none;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-left: 20px;
+   }
+   
+   ._categories li{ /* --- */
+      width: 250px;
+   }
+   ._sous_catégories li{
+      max-width: 150px;
+   }
+   #nav_small_screens{
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 412px;
+   }
+   #nav_small_screens div{
+      width: 40%;
+      height:100px;
+      border-radius: 5px;
+      margin: 5px;
+      background-color: #FFDEDE;
+   }
+   #nav_small_screens img{
+      display: block;
+      width: 60px;
+      height: 60px;
+      margin: auto;
+      margin-top: 10px;
+   }
+   #nav_small_screens h3{
+      text-align: center;
+   }
+   #_main_content{
+      display:flex;
+      flex-direction: column;
+   }
+   #main{
+      width: 90%;
+      margin: auto;
+   }
+   #all_ads{
+      flex-wrap: wrap;
+      
+   }
+   ._cat{
+      display: flex;
+      flex-direction: column;
+      width: 190px;
+   } 
+   
+ }
+ /* details{
+   height: 38px;
+    width: 80%;
+    background-color: #ABC9FF;
+    border: 2px solid white;
+ }
+ details:hover{
+   background-color: #FF8B8B;
+ } */
